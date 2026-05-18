@@ -1,112 +1,169 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #111217; /* Темный глубокий фон */
+    background: #111217;
     font-family: 'Segoe UI', Roboto, sans-serif;
     color: #f5f5f7;
 }
 
-.container{
+.container {
     width: 100%;
-    max-width: 760px;
-
+    max-width: 1100px;
     margin: 0 auto;
     padding: 25px 20px 60px;
 }
 
-.logo{
+.logo {
     font-size: 18px;
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
+.main-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
 .randomizer {
-    width: 100%;
-    background: #181922; /* Темная карточка */
-    border: 1px solid #2d2f3f; /* Едва заметная неоновая рамка */
+    flex: 1;
+    background: #181922;
+    border: 1px solid #2d2f3f;
     border-radius: 28px;
     padding: 45px 35px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.random-title{
+.random-title {
     font-size: 34px;
     font-weight: 800;
-
     text-align: center;
-
     margin-bottom: 10px;
 }
 
-.random-subtitle {
-    color: #a0a5c0; /* Более читаемый текст на темном */
+.random-result {
+    min-height: 280px; /* Подберите высоту так, чтобы влезал даже самый длинный челлендж */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px; /* Стабильный отступ до кнопок и аватарок */
+}
+.random-result p {
+    margin-bottom: 80px; /* Регулируйте число (15px, 20px, 25px), чтобы настроить идеальное расстояние */
 }
 
-.random-result{
+.result-display {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin-bottom: 35px;
+    justify-content: center;
+    height: 200px; /* Резервируем четкое место под картинку + имя */
 }
 
-.random-result p{
+.random-result p {
     font-size: 22px;
     margin-bottom: 25px;
 }
 
-.random-result img{
+.random-result img {
     width: 210px;
     height: 210px;
-
     object-fit: contain;
 }
 
-.category-buttons{
+/* Контейнеры сортировки кнопок */
+.menu-sorting-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(20, 22, 31, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.menu-group.modifier-group {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
+.group-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8a8f9d;
+    font-weight: 700;
+    margin-left: 4px;
+    margin-bottom: 8px; /* Добавили отступ снизу, чтобы отодвинуть кнопки */
+}
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Увеличили внутренний зазор */
+}
+
+
+
+.buttons-row {
+    display: flex;
     flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-bottom: 30px;
+    gap: 10px;
+    justify-content: center; /* Выравнивает кнопки по центру горизонтали */
 }
 
 .category-btn {
-    padding: 14px 22px;
-    border-radius: 16px;
-    border: none;
-    
-    /* Цвета для темной темы */
-    background: #232533;
-    color: #f5f5f7;
-
-    /* Возвращаем оригинальные шрифты */
-    font-size: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #b0b5c6;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    font-size: 14px;
     font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .category-btn:hover {
-    background: #2f3246;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .category-btn.active {
-    background: #8257e5; /* Фирменный фиолетовый */
-    color: white;
+    background: linear-gradient(135deg, #ff4655, #b7222e); /* Фирменный агрессивный красный/неоновый цвет */
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+    font-weight: 700;
 }
 
-.action-buttons{
+.modifier-group .category-btn.active {
+    background: linear-gradient(135deg, #8a2be2, #4a0082);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+}
+.category-btn:active {
+    transform: translateY(1px);
+}
+
+/* Действия */
+.action-buttons {
     display: flex;
     justify-content: center;
     gap: 14px;
-
     margin-bottom: 45px;
 }
 
@@ -115,11 +172,8 @@ body {
     padding: 18px;
     border: none;
     border-radius: 18px;
-    
-    background: #8257e5; /* Фиолетовый */
+    background: #8257e5;
     color: white;
-
-    /* Возвращаем оригинальные шрифты */
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
@@ -135,12 +189,8 @@ body {
     padding: 18px 24px;
     border: none;
     border-radius: 18px;
-    
-    /* Темный вариант для дефолта */
     background: #2a2c3d;
     color: #f5f5f7;
-
-    /* Возвращаем оригинальные шрифты */
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
@@ -151,7 +201,6 @@ body {
     background: #363952;
 }
 
-/* Отключаем кнопку во время крутилки */
 .random-btn:disabled {
     background: #44475a;
     transform: none;
@@ -159,25 +208,26 @@ body {
     opacity: 0.6;
 }
 
-.characters-title{
+/* Сетка отображения пула */
+.characters-title {
     font-size: 30px;
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
-.characters-grid{
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(90px, 90px));
-
-    gap: 18px;
+.characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Персонажи всегда будут рендериться строго по центру, без привязки к левому боку */
+    width: 100%;
+    margin-top: 20px;
 }
 
 .character-card {
     width: 90px;
     height: 90px;
-    background: #232533; /* Темный фон для карточки героя */
+    background: #232533;
     border-radius: 18px;
     display: flex;
     justify-content: center;
@@ -187,47 +237,51 @@ body {
 
 .character-card:hover {
     transform: translateY(-3px);
-    background: #2f3246; /* Подсветка при наведении */
+    background: #2f3246;
 }
 
-.character-card img{
+.character-card img {
     width: 70px;
     height: 70px;
-
     object-fit: contain;
 }
 
-/* Отключаем кнопку во время крутилки */
-.random-btn:disabled {
-    background: #555;
-    transform: none;
-    cursor: not-allowed;
-    opacity: 0.7;
+/* Выбор игрока */
+.player-select-container {
+    margin: 15px auto;
+    text-align: center;
 }
 
-/* Эффект победного подмигивания, когда персонаж выбрался */
-.bounce-animation {
-    animation: popIn 0.3s ease-out;
+.player-select-container label {
+    display: block;
+    color: #a0a5c0;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Увеличиваем макс. ширину контейнера, чтобы влезла история */
-.container {
-    max-width: 1100px; /* Было 760px */
+.player-dropdown {
+    background-color: #1e2235;
+    color: #ffffff;
+    border: 2px solid #3d4465;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 220px;
+    text-align: center;
 }
 
-/* Обертка, которая ставит рандомайзер и историю рядом */
-.main-wrapper {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
+.player-dropdown:focus, .player-dropdown:hover {
+    border-color: #ff851b;
+    box-shadow: 0 0 10px rgba(255, 133, 27, 0.2);
 }
 
-/* Делаем основной блок гибким */
-.randomizer {
-    flex: 1;
-}
-
-/* Стили для блока истории */
+/* История */
 .history-block {
     width: 280px;
     background: #181922;
@@ -258,7 +312,6 @@ body {
     padding: 20px 0;
 }
 
-/* Элемент в списке истории */
 .history-item {
     display: flex;
     align-items: center;
@@ -275,18 +328,12 @@ body {
     object-fit: contain;
 }
 
-.history-item span {
-    font-size: 16px;
-    font-weight: 600;
-    color: #f5f5f7;
-}
-
-/* Специальный стиль для текста задания в главном окне */
+/* Стили вывода текстов катки */
 .challenge-text-display {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     text-align: center;
-    color: #ffb020; /* Золотой геймерский цвет */
+    color: #ffb020;
     padding: 20px;
     min-height: 100px;
     display: flex;
@@ -296,23 +343,8 @@ body {
     text-shadow: 0 0 10px rgba(255, 176, 32, 0.3);
 }
 
-/* Цвета для типов предметов */
-.item-orange {
-    color: #ff851b !important; /* Оружие */
-    text-shadow: 0 0 10px rgba(255, 133, 27, 0.4);
-}
-.item-green {
-    color: #2ecc40 !important; /* Живучесть */
-    text-shadow: 0 0 10px rgba(46, 204, 64, 0.4);
-}
-.item-purple {
-    color: #b10dc9 !important; /* Спиритизм */
-    text-shadow: 0 0 10px rgba(177, 13, 201, 0.4);
-}
-
-/* Общий стиль для отображения предмета */
 .item-text-display {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
     text-align: center;
     padding: 20px;
@@ -323,6 +355,7 @@ body {
     justify-content: center;
     line-height: 1.4;
 }
+
 .item-tier {
     font-size: 14px;
     color: #a0a5c0;
@@ -332,92 +365,101 @@ body {
     letter-spacing: 1px;
 }
 
-.player-select-container {
-    margin: 15px auto;
-    text-align: center;
-    font-family: sans-serif;
+.item-orange { color: #ff851b !important; text-shadow: 0 0 10px rgba(255, 133, 27, 0.4); }
+.item-green { color: #2ecc40 !important; text-shadow: 0 0 10px rgba(46, 204, 64, 0.4); }
+.item-purple { color: #b10dc9 !important; text-shadow: 0 0 10px rgba(177, 13, 201, 0.4); }
+
+
+/* Контейнер, объединяющий логотип и селектор */
+.logo-container {
+    display: flex;
+    justify-content: space-between; /* Логотип слева, селектор справа */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Настройте под максимальную ширину вашего сайта */
+    margin: 0 auto 30px auto;
+    padding: 0 10px;
 }
 
-.player-select-container label {
-    display: block;
-    color: #a0a5c0;
-    font-size: 14px;
-    margin-bottom: 8px;
+/* Стилизация логотипа (сохраняйте свои старые свойства, если они отличаются) */
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin: 0; /* Убираем дефолтные отступы, если были */
+}
+
+/* Правая зона для выбора игрока */
+.header-player-zone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.player-label {
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #8a8f9d;
+    font-weight: 600;
 }
 
-.player-dropdown {
-    background-color: #1e2235;
+/* Стилизация выпадающего списка под дизайн Deadlock */
+.header-player-select {
+    background: rgba(255, 255, 255, 0.03);
     color: #ffffff;
-    border: 2px solid #3d4465;
-    padding: 10px 20px;
-    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 16px;
+    font-size: 14px;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     outline: none;
-    transition: all 0.3s ease;
-    width: 220px;
-    text-align: center;
+    transition: all 0.2s ease;
 }
 
-.player-dropdown:focus, .player-dropdown:hover {
-    border-color: #ff851b; /* Оранжевый акцент при наведении */
-    box-shadow: 0 0 10px rgba(255, 133, 27, 0.2);
+.header-player-select:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
+.header-player-select:focus {
+    border-color: #ff4655; /* Подсветка в цвет кнопок персонажей */
+    box-shadow: 0 0 10px rgba(255, 70, 85, 0.3);
+}
+
+/* Опции внутри списка */
+.header-player-select option {
+    background: #14161f;
+    color: #ffffff;
+}
+
+/* Анимации */
+.bounce-animation { animation: popIn 0.3s ease-out; }
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(20px); }
     100% { opacity: 1; transform: translateX(0); }
 }
-
-/* Адаптив под мобилки */
-@media(max-width: 950px) {
-    .main-wrapper {
-        flex-direction: column; /* На мобилках история падает вниз */
-    }
-    
-    .history-block {
-        width: 100%; /* На мобилках во всю ширину */
-    }
-}
-
 @keyframes popIn {
     0% { transform: scale(0.8); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
+/* Адаптив */
+@media(max-width: 950px) {
+    .main-wrapper { flex-direction: column; }
+    .history-block { width: 100%; }
+}
+
 @media(max-width: 700px){
-
-    .randomizer{
-        padding: 30px 20px;
-    }
-
-    .random-title{
-        font-size: 28px;
-    }
-
-    .random-result img{
-        width: 170px;
-        height: 170px;
-    }
-
-    .action-buttons{
-        flex-direction: column;
-    }
-
-    .random-btn{
-        width: 100%;
-        font-size: 20px;
-    }
-
-    .default-btn{
-        width: 100%;
-    }
-
-    .characters-grid{
-        justify-content: center;
-    }
+    .randomizer { padding: 30px 20px; }
+    .random-title { font-size: 28px; }
+    .random-result img { width: 170px; height: 170px; }
+    .action-buttons { flex-direction: column; }
+    .random-btn { width: 100%; font-size: 20px; }
+    .default-btn { width: 100%; }
+    .characters-grid { justify-content: center; }
 }
