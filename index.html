@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грандомайзер 1.2 - Дедлок рандом х@йни</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="logo">
+            Грандомайзер 1.2
+        </div>
+
+        <!-- Новый контейнер-обертка для выстраивания в ряд -->
+        <div class="main-wrapper">
+
+            <!-- Твой основной рандомайзер (остался без изменений внутри) -->
+            <section class="randomizer">
+                <h1 class="random-title">Рандомайзер</h1>
+
+                <div class="random-result">
+                    <p>Тебе выпал:</p>
+                    <div class="result-display">
+                        <img src="img/characters/paradox.png" id="randomCharacterImage" alt="Character">
+                        <h3 id="randomCharacterName"
+                            style="text-align: center; margin-top: 15px; font-size: 24px; font-weight: 700;">Paradox
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">Все персонажи</button>
+                    <button class="category-btn" data-category="grant">Лично для Гранта</button>
+                    <button class="category-btn" data-category="timur">Лично для Тимура</button>
+                    <button class="category-btn" data-category="meta">Персонажи в мете</button>
+                    <button class="category-btn" data-category="trash">Ну это имба самая</button>
+                    <button class="category-btn" data-category="builds">Рандом билды</button>
+                    <button class="category-btn" data-category="challenges">Задания на катку</button>
+                    <button class="category-btn" data-category="items">Рандом активок</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="random-btn" id="randomBtn">Зарандомить</button>
+                    <button class="default-btn" id="defaultBtn">Дефолт</button>
+                </div>
+
+                <h2 class="characters-title">Персонажи</h2>
+                <div class="characters-grid" id="charactersGrid"></div>
+            </section>
+
+            <!-- НАШ НОВЫЙ БЛОК ИСТОРИИ -->
+            <aside class="history-block">
+                <h2 class="history-title">Персы которые выпали:</h2>
+                <div class="history-list" id="historyList">
+                    <p class="history-empty">Сосни</p>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+</body>
+<script src="js/script.js"></script>
+
+</html>

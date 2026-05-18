@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111217; /* Темный глубокий фон */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #f5f5f7;
+}
+
+.container{
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto;
+    padding: 25px 20px 60px;
+}
+
+.logo{
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.randomizer {
+    width: 100%;
+    background: #181922; /* Темная карточка */
+    border: 1px solid #2d2f3f; /* Едва заметная неоновая рамка */
+    border-radius: 28px;
+    padding: 45px 35px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.random-title{
+    font-size: 34px;
+    font-weight: 800;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+.random-subtitle {
+    color: #a0a5c0; /* Более читаемый текст на темном */
+}
+
+.random-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.random-result p{
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.random-result img{
+    width: 210px;
+    height: 210px;
+
+    object-fit: contain;
+}
+
+.category-buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    padding: 14px 22px;
+    border-radius: 16px;
+    border: none;
+    
+    /* Цвета для темной темы */
+    background: #232533;
+    color: #f5f5f7;
+
+    /* Возвращаем оригинальные шрифты */
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.category-btn:hover {
+    background: #2f3246;
+}
+
+.category-btn.active {
+    background: #8257e5; /* Фирменный фиолетовый */
+    color: white;
+}
+
+.action-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 45px;
+}
+
+.random-btn {
+    width: 320px;
+    padding: 18px;
+    border: none;
+    border-radius: 18px;
+    
+    background: #8257e5; /* Фиолетовый */
+    color: white;
+
+    /* Возвращаем оригинальные шрифты */
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.random-btn:hover {
+    background: #966df2;
+    transform: scale(1.02);
+}
+
+.default-btn {
+    padding: 18px 24px;
+    border: none;
+    border-radius: 18px;
+    
+    /* Темный вариант для дефолта */
+    background: #2a2c3d;
+    color: #f5f5f7;
+
+    /* Возвращаем оригинальные шрифты */
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.default-btn:hover {
+    background: #363952;
+}
+
+/* Отключаем кнопку во время крутилки */
+.random-btn:disabled {
+    background: #44475a;
+    transform: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.characters-title{
+    font-size: 30px;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.characters-grid{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(90px, 90px));
+
+    gap: 18px;
+}
+
+.character-card {
+    width: 90px;
+    height: 90px;
+    background: #232533; /* Темный фон для карточки героя */
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.character-card:hover {
+    transform: translateY(-3px);
+    background: #2f3246; /* Подсветка при наведении */
+}
+
+.character-card img{
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+}
+
+/* Отключаем кнопку во время крутилки */
+.random-btn:disabled {
+    background: #555;
+    transform: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Эффект победного подмигивания, когда персонаж выбрался */
+.bounce-animation {
+    animation: popIn 0.3s ease-out;
+}
+
+/* Увеличиваем макс. ширину контейнера, чтобы влезла история */
+.container {
+    max-width: 1100px; /* Было 760px */
+}
+
+/* Обертка, которая ставит рандомайзер и историю рядом */
+.main-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Делаем основной блок гибким */
+.randomizer {
+    flex: 1;
+}
+
+/* Стили для блока истории */
+.history-block {
+    width: 280px;
+    background: #181922;
+    border: 1px solid #2d2f3f;
+    border-radius: 28px;
+    padding: 30px 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.history-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f5f5f7;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-empty {
+    color: #a0a5c0;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+/* Элемент в списке истории */
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #232533;
+    padding: 10px 15px;
+    border-radius: 16px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.history-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.history-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f5f5f7;
+}
+
+/* Специальный стиль для текста задания в главном окне */
+.challenge-text-display {
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffb020; /* Золотой геймерский цвет */
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+    text-shadow: 0 0 10px rgba(255, 176, 32, 0.3);
+}
+
+/* Цвета для типов предметов */
+.item-orange {
+    color: #ff851b !important; /* Оружие */
+    text-shadow: 0 0 10px rgba(255, 133, 27, 0.4);
+}
+.item-green {
+    color: #2ecc40 !important; /* Живучесть */
+    text-shadow: 0 0 10px rgba(46, 204, 64, 0.4);
+}
+.item-purple {
+    color: #b10dc9 !important; /* Спиритизм */
+    text-shadow: 0 0 10px rgba(177, 13, 201, 0.4);
+}
+
+/* Общий стиль для отображения предмета */
+.item-text-display {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+}
+.item-tier {
+    font-size: 14px;
+    color: #a0a5c0;
+    font-weight: 400;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Адаптив под мобилки */
+@media(max-width: 950px) {
+    .main-wrapper {
+        flex-direction: column; /* На мобилках история падает вниз */
+    }
+    
+    .history-block {
+        width: 100%; /* На мобилках во всю ширину */
+    }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media(max-width: 700px){
+
+    .randomizer{
+        padding: 30px 20px;
+    }
+
+    .random-title{
+        font-size: 28px;
+    }
+
+    .random-result img{
+        width: 170px;
+        height: 170px;
+    }
+
+    .action-buttons{
+        flex-direction: column;
+    }
+
+    .random-btn{
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .default-btn{
+        width: 100%;
+    }
+
+    .characters-grid{
+        justify-content: center;
+    }
+}
