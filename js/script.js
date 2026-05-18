@@ -115,9 +115,9 @@ const characters = {
         { name: "Шива макгрегор", image: "img/characters/shiv.png" },
         { name: "Шива дефолт", image: "img/characters/shiv.png" },
         { name: "Синклар цыган через ульту", image: "img/characters/sinclair.png" },
-        { name: "Дурман через ульту", image: "img/characters/doorman.png" },
-        { name: "Дурман через двери", image: "img/characters/doorman.png" },
-        { name: "Дурман через кола кола", image: "img/characters/doorman.png" },
+        { name: "Дурман через ульту", image: "img/characters/the-doorman.png" },
+        { name: "Дурман через двери", image: "img/characters/the-doorman.png" },
+        { name: "Дурман через кола кола", image: "img/characters/the-doorman.png" },
         { name: "Виндикта через сапорт", image: "img/characters/vindicta.png" },
         { name: "Виндикта через ган", image: "img/characters/vindicta.png" },
         { name: "Вайпер через ган", image: "img/characters/vyper.png" },
@@ -167,6 +167,30 @@ const characters = {
     ]
 };
 
+// Функция отправки сообщений в Discord через Webhook
+
+function sendToDiscord(messageText) {
+    // Вставь сюда ссылку РЕАЛЬНО ВМЕСТО всего текста внутри кавычек
+    const webhookUrl = "https://discord.com/api/webhooks/1505930908790816782/A7nYf-FjL9sww3UikARnQSFW3d49Ll5sLDJijerE9wWQLPfFH7gJXQkJIQS3gRq1ANVC";
+
+    console.log("=== ПОПЫТКА ОТПРАВКИ В ДИСКОРД ===");
+    console.log("Текст сообщения:", messageText);
+    console.log("Куда отправляем (длина ссылки):", webhookUrl.length);
+
+    const payload = {
+        username: "Грандомайзер 1.3",
+        avatar_url: "https://i.pinimg.com/1200x/0c/96/40/0c9640a0c5ad5de4cf14a2cb9d058d0e.jpg",
+        content: messageText
+    };
+
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+
+}
+
 // DOM Элементы
 const charactersGrid = document.getElementById("charactersGrid");
 const randomBtn = document.getElementById("randomBtn");
@@ -183,7 +207,7 @@ let historyArray = [];
 // Отрисовка сетки
 function renderCharacters(category) {
     charactersGrid.innerHTML = "";
-    
+
     if (category === "challenges" || category === "items") {
         const text = category === "challenges" ? "Все задания активны." : "Все проклятые предметы в пуле.";
         charactersGrid.innerHTML = `<p style='color: #a0a5c0; grid-column: 1/-1; text-align:center;'>${text} Жми «Зарандомить»!</p>`;
@@ -203,7 +227,7 @@ function renderCharacters(category) {
     uniqueChars.forEach(char => {
         const card = document.createElement("div");
         card.classList.add("character-card");
-        card.title = char.name.split(' ')[0]; 
+        card.title = char.name.split(' ')[0];
         card.innerHTML = `<img src="${char.image}" alt="hero">`;
         charactersGrid.appendChild(card);
     });
@@ -218,7 +242,7 @@ function updateHistory(itemData) {
     historyArray.forEach(char => {
         const item = document.createElement("div");
         item.classList.add("history-item");
-        
+
         const isTextOnly = currentCategory === "challenges" || currentCategory === "items";
         const imgTag = isTextOnly ? "" : `<img src="${char.image}" alt="hero">`;
 
@@ -244,9 +268,9 @@ function randomCharacter() {
 
     randomBtn.disabled = true;
     randomCharacterImage.classList.remove("bounce-animation");
-    
+
     const isTextOnly = currentCategory === "challenges" || currentCategory === "items";
-    
+
     if (isTextOnly) {
         randomCharacterImage.style.display = "none";
         randomCharacterName.classList.add("challenge-text-display");
@@ -259,22 +283,20 @@ function randomCharacter() {
     }
 
     let counter = 0;
-    const totalTicks = 20; 
-    let duration = 50;     
+    const totalTicks = 20;
+    let duration = 50;
     let picked = null;
 
     function spin() {
         const randomIndex = Math.floor(Math.random() * pool.length);
         picked = pool[randomIndex];
 
-        // Очищаем старые классы цветов перед каждым тиком
         randomCharacterName.classList.remove("item-orange", "item-green", "item-purple");
 
         if (!isTextOnly) {
             randomCharacterImage.src = picked.image;
             randomCharacterName.textContent = picked.name;
         } else if (currentCategory === "items") {
-            // Красим текст в цвет категории предмета
             const colorClass = picked.type === "orange" ? "item-orange" : picked.type === "green" ? "item-green" : "item-purple";
             randomCharacterName.classList.add(colorClass);
             randomCharacterName.innerHTML = `${picked.name} <div class="item-tier">${picked.tier}</div>`;
@@ -285,13 +307,42 @@ function randomCharacter() {
         counter++;
 
         if (counter < totalTicks) {
-            if (counter > totalTicks - 10) duration += 30; 
-            if (counter > totalTicks - 5) duration += 60;  
+            if (counter > totalTicks - 10) duration += 30;
+            if (counter > totalTicks - 5) duration += 60;
             setTimeout(spin, duration);
         } else {
             randomBtn.disabled = false;
             randomCharacterName.classList.add("bounce-animation");
             updateHistory(picked);
+
+            // КРАСИВЫЙ ФОРМАТИРОВАННЫЙ ТЕКСТ ДЛЯ ДИСКОРДА
+            // 1. Получаем имя того, кто выбран в выпадающем списке прямо сейчас
+            const activePlayer = document.getElementById("playerSelect").value;
+
+            // 2. Генерируем текст под каждую категорию с упоминанием игрока
+            let discordMessage = "";
+
+            if (currentCategory === "all") {
+                discordMessage = `🎲 **${activePlayer}** зарандомил общего героя: \`${picked.name}\``;
+            } else if (currentCategory === "grant") {
+                discordMessage = `🦕 **${activePlayer}** крутит пул Гранта: \`${picked.name}\` *(Лайнинг обещает быть жарким)*`;
+            } else if (currentCategory === "timur") {
+                discordMessage = `🧱 **${activePlayer}** заглянул к Тимуру: \`${picked.name}\` *(Завод работает без выходных)*`;
+            } else if (currentCategory === "meta") {
+                discordMessage = `🔥 **${activePlayer}** выбивает жёсткую МЕТУ: \`${picked.name}\``;
+            } else if (currentCategory === "trash") {
+                discordMessage = `🗑️ **${activePlayer}** отправляется на помойку: \`${picked.name}\` *(Пати, приготовьтесь терпеть)*`;
+            } else if (currentCategory === "builds") {
+                discordMessage = `🛠️ **${activePlayer}** получает безумный билд:\n> __${picked.name}__`;
+            } else if (currentCategory === "challenges") {
+                discordMessage = `🎯 **Вызов принят!** Игрок **${activePlayer}** получает контракт:\n> ${picked.name}`;
+            } else if (currentCategory === "items") {
+                const colorEmoji = picked.type === "orange" ? "orange_circle [Оружие]" : picked.type === "green" ? "green_circle [Живучесть]" : "purple_circle [Спиритизм]";
+                discordMessage = `🛒 **Проклятый закуп для ${activePlayer}!** Обязательный предмет:\n> **${picked.name}**\n> *Категория: ${colorEmoji} | ${picked.tier}*`;
+            }
+
+            // 3. Отправляем готовый текст в Discord
+            sendToDiscord(discordMessage);
         }
     }
 
@@ -306,7 +357,7 @@ categoryButtons.forEach(btn => {
 
         currentCategory = btn.dataset.category;
         randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display");
-        
+
         if (currentCategory === "challenges" || currentCategory === "items") {
             randomCharacterImage.style.display = "none";
             randomCharacterName.classList.add("challenge-text-display");
@@ -314,7 +365,7 @@ categoryButtons.forEach(btn => {
             randomCharacterName.textContent = currentCategory === "challenges" ? "Нажми кнопку, чтобы получить задание" : "Нажми кнопку, чтобы выбить предмет";
         } else {
             randomCharacterImage.style.display = "block";
-            randomCharacterImage.src = "img/characters/paradox.png"; 
+            randomCharacterImage.src = "img/characters/paradox.png";
             randomCharacterName.textContent = "Paradox";
         }
 
@@ -327,12 +378,12 @@ defaultBtn.addEventListener("click", () => {
     currentCategory = "all";
     categoryButtons.forEach(b => b.classList.remove("active"));
     document.querySelector('[data-category="all"]').classList.add("active");
-    
+
     randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display");
     randomCharacterImage.style.display = "block";
     randomCharacterImage.src = "img/characters/paradox.png";
     randomCharacterName.textContent = "Paradox";
-    
+
     renderCharacters("all");
 });
 
