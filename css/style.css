@@ -332,6 +332,41 @@ body {
     letter-spacing: 1px;
 }
 
+.player-select-container {
+    margin: 15px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.player-select-container label {
+    display: block;
+    color: #a0a5c0;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.player-dropdown {
+    background-color: #1e2235;
+    color: #ffffff;
+    border: 2px solid #3d4465;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 220px;
+    text-align: center;
+}
+
+.player-dropdown:focus, .player-dropdown:hover {
+    border-color: #ff851b; /* Оранжевый акцент при наведении */
+    box-shadow: 0 0 10px rgba(255, 133, 27, 0.2);
+}
+
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(20px); }
     100% { opacity: 1; transform: translateX(0); }
