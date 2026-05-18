@@ -4,59 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Грандомайзер 1.2 - Дедлок рандом х@йни</title>
+    <title>Грандомайзер 1.6 - Дедлок рандом х@йни</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    
     <main class="container">
 
-        <div class="logo">
-            Грандомайзер 1.2
+        <!-- Переделанный блок логотипа совмещенный с выбором игрока -->
+        <div class="logo-container">
+            <div class="logo">Грандомайзер 1.6</div>
+            
+            <div class="header-player-zone">
+                <span class="player-label">Кто крутит:</span>
+                <select id="playerSelect" class="header-player-select">
+                    <option value="Пацаны">Выбрать имя</option>
+                    <option value="Грант">Грант</option>
+                    <option value="Тимур">Тимур</option>
+                    <option value="Саня К">Саня К</option>
+                    <option value="Саня С">Саня С</option>
+                    <option value="Юрчик">Юрчик</option>
+                </select>
+            </div>
         </div>
 
         <!-- Новый контейнер-обертка для выстраивания в ряд -->
         <div class="main-wrapper">
 
-            <!-- Твой основной рандомайзер (остался без изменений внутри) -->
+            <!-- Твой основной рандомайзер -->
             <section class="randomizer">
                 <h1 class="random-title">Рандомайзер</h1>
 
                 <div class="random-result">
                     <p>Тебе выпал:</p>
                     <div class="result-display">
-                        <img src="img/characters/paradox.png" id="randomCharacterImage" alt="Character">
-                        <h3 id="randomCharacterName"
-                            style="text-align: center; margin-top: 15px; font-size: 24px; font-weight: 700;">Paradox
-                        </h3>
+                        <img src="img/grant.jpg" id="randomCharacterImage" alt="Character">
+                        <h3 id="randomCharacterName" style="text-align: center; margin-top: 15px; font-size: 24px; font-weight: 700;">Пока никто</h3>
                     </div>
                 </div>
 
-                <div class="category-buttons">
-                    <button class="category-btn active" data-category="all">Все персонажи</button>
-                    <button class="category-btn" data-category="grant">Лично для Гранта</button>
-                    <button class="category-btn" data-category="timur">Лично для Тимура</button>
-                    <button class="category-btn" data-category="meta">Персонажи в мете</button>
-                    <button class="category-btn" data-category="trash">Ну это имба самая</button>
-                    <button class="category-btn" data-category="builds">Рандом билды</button>
-                    <button class="category-btn" data-category="challenges">Задания на катку</button>
-                    <button class="category-btn" data-category="items">Рандом активок</button>
+                <!-- Контейнер сортировки кнопок -->
+                <div class="menu-sorting-container">
+
+                    <!-- Группа 1: Выбор Персонажа -->
+                    <div class="menu-group">
+                        <div class="group-title">Рандомы с персонажами</div>
+                        <div class="buttons-row">
+                            <button class="category-btn active" data-category="all">Все герои</button>
+                            <button class="category-btn" data-category="meta">Мета</button>
+                            <button class="category-btn" data-category="trash">Залупа</button>
+                            <button class="category-btn" data-category="grant">Грант</button>
+                            <button class="category-btn" data-category="timur">Тимур</button>
+                        </div>
+                    </div>
+
+                    <!-- Группа 2: Усложнения катки -->
+                    <div class="menu-group modifier-group">
+                        <div class="group-title">Рандомы с каткой</div>
+                        <div class="buttons-row">
+                            <button class="category-btn" data-category="builds">Рандом билды</button>
+                            <button class="category-btn" data-category="challenges">Задания для каток</button>
+                            <button class="category-btn" data-category="items">Рандом активка</button>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Блок выбора игрока -->
-                <div class="player-select-container">
-                    <label for="playerSelect">Кто крутит рулетку?</label>
-                    <select id="playerSelect" class="player-dropdown">
-                        <option value="Пацаны">Выбрать имя</option>
-                        <option value="Грант">Грант</option>
-                        <option value="Тимур">Тимур</option>
-                        <option value="Саня К">Саня К</option>
-                        <option value="Саня С">Саня С</option>
-                        <option value="Юрчик">Юрчик</option>
-                    </select>
-                </div>
-
+                <!-- Кнопки действия -->
                 <div class="action-buttons">
                     <button class="random-btn" id="randomBtn">Зарандомить</button>
                     <button class="default-btn" id="defaultBtn">Дефолт</button>
