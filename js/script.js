@@ -87,45 +87,45 @@ const characters = {
     ],
     builds: [
         { name: "Венатор через РУКУ", image: "img/characters/venator.png" },
-        { name: "Вязкус ган", image: "img/characters/viscous.png" },
-        { name: "Вязкус Через Руку", image: "img/characters/viscous.png" },
-        { name: "Вязкус через помощь", image: "img/characters/viscous.png" },
-        { name: "Динамо ган", image: "img/characters/dynamo.png" },
-        { name: "Динамо через руку", image: "img/characters/dynamo.png" },
-        { name: "Динамо блэк хол", image: "img/characters/dynamo.png" },
-        { name: "Талон через дрона", image: "img/characters/grey-talon.png" },
-        { name: "Талон ган", image: "img/characters/grey-talon.png" },
-        { name: "Хейза через умеренную скрытую руку", image: "img/characters/haze.png" },
-        { name: "Инфернус через простоквашино (бег)", image: "img/characters/infernus.png" },
-        { name: "Айви через стан (3 скил)", image: "img/characters/ivy.png" },
-        { name: "Айви через руку", image: "img/characters/ivy.png" },
-        { name: "Айви через ган", image: "img/characters/ivy.png" },
-        { name: "Кельвин бойцовский клуб (рука)", image: "img/characters/kelvin.png" },
-        { name: "Кельвин через бомбардировку (бомбочки)", image: "img/characters/kelvin.png" },
-        { name: "Гейста шлюхикрд23 сосалка", image: "img/characters/lady-geist.png" },
-        { name: "Лэш ган", image: "img/characters/lash.png" },
-        { name: "Лэш спирит", image: "img/characters/lash.png" },
-        { name: "Макгинесс через ган", image: "img/characters/mcginnis.png" },
-        { name: "Макгинесс через Хелпу", image: "img/characters/mcginnis.png" },
-        { name: "Макгинесс через турельки", image: "img/characters/mcginnis.png" },
-        { name: "Парадокс через бомбочки", image: "img/characters/paradox.png" },
-        { name: "Севен через шары", image: "img/characters/seven.png" },
-        { name: "Севен через ульту", image: "img/characters/seven.png" },
+        { name: "Вязкус через ГАН", image: "img/characters/viscous.png" },
+        { name: "Вязкус через РУКУ", image: "img/characters/viscous.png" },
+        { name: "Вязкус через ПОМОЩЬ", image: "img/characters/viscous.png" },
+        { name: "Динамо через ГАН", image: "img/characters/dynamo.png" },
+        { name: "Динамо через РУКУ", image: "img/characters/dynamo.png" },
+        { name: "Динамо через БЛЭК ХОЛЛ", image: "img/characters/dynamo.png" },
+        { name: "Талон через ДРОНА", image: "img/characters/grey-talon.png" },
+        { name: "Талон через ГАН", image: "img/characters/grey-talon.png" },
+        { name: "Хейза через умеренную скрытую РУКУ", image: "img/characters/haze.png" },
+        { name: "Инфернус через простоквашино (БЕГ)", image: "img/characters/infernus.png" },
+        { name: "Айви через СТАН (3 скил)", image: "img/characters/ivy.png" },
+        { name: "Айви через РУКУ", image: "img/characters/ivy.png" },
+        { name: "Айви через ГАН", image: "img/characters/ivy.png" },
+        { name: "Кельвин через бойцовский клуб (РУКА)", image: "img/characters/kelvin.png" },
+        { name: "Кельвин через бомбардировку (БОМБОЧКИ)", image: "img/characters/kelvin.png" },
+        { name: "Гейста шлюхикрд23 СОСАЛКА", image: "img/characters/lady-geist.png" },
+        { name: "Лэш через ГАН", image: "img/characters/lash.png" },
+        { name: "Лэш через СПИРИТ", image: "img/characters/lash.png" },
+        { name: "Макгинесс через ГАН", image: "img/characters/mcginnis.png" },
+        { name: "Макгинесс через ХЕЛПУ", image: "img/characters/mcginnis.png" },
+        { name: "Макгинесс через ТУРЕЛЬКИ", image: "img/characters/mcginnis.png" },
+        { name: "Парадокс через БОМБОЧКИ", image: "img/characters/paradox.png" },
+        { name: "Севен через ШАРЫ", image: "img/characters/seven.png" },
+        { name: "Севен через УЛЬТУ", image: "img/characters/seven.png" },
         { name: "Севен через 3", image: "img/characters/seven.png" },
         { name: "Шива макгрегор", image: "img/characters/shiv.png" },
         { name: "Шива дефолт", image: "img/characters/shiv.png" },
-        { name: "Синклар цыган через ульту", image: "img/characters/sinclair.png" },
-        { name: "Дурман через ульту", image: "img/characters/the-doorman.png" },
-        { name: "Дурман через двери", image: "img/characters/the-doorman.png" },
-        { name: "Дурман через кола кола", image: "img/characters/the-doorman.png" },
-        { name: "Виндикта через сапорт", image: "img/characters/vindicta.png" },
-        { name: "Виндикта через ган", image: "img/characters/vindicta.png" },
-        { name: "Вайпер через ган", image: "img/characters/vyper.png" },
-        { name: "Вайпер через выживаемость", image: "img/characters/vyper.png" },
-        { name: "Вайпер через спирит", image: "img/characters/vyper.png" },
-        { name: "Варден через клетки (эхошард)", image: "img/characters/warden.png" },
-        { name: "Варден ульт", image: "img/characters/warden.png" },
-        { name: "Варден слабый ган", image: "img/characters/warden.png" },
+        { name: "Синклар цыган через УЛЬТУ", image: "img/characters/sinclair.png" },
+        { name: "Дурман через УЛЬТУ", image: "img/characters/doorman.png" },
+        { name: "Дурман через ДВЕРИ", image: "img/characters/doorman.png" },
+        { name: "Дурман через КОЛА КОЛА", image: "img/characters/doorman.png" },
+        { name: "Виндикта через ПОМОЩЬ", image: "img/characters/vindicta.png" },
+        { name: "Виндикта через ГАН", image: "img/characters/vindicta.png" },
+        { name: "Вайпер через ГАН", image: "img/characters/vyper.png" },
+        { name: "Вайпер через ВЫЖИВАЕМОСТЬ", image: "img/characters/vyper.png" },
+        { name: "Вайпер через СПИРИТ", image: "img/characters/vyper.png" },
+        { name: "Варден через КЛЕТКИ (эхошард)", image: "img/characters/warden.png" },
+        { name: "Варден через УЛЬТ", image: "img/characters/warden.png" },
+        { name: "Варден через слабый ГАН", image: "img/characters/warden.png" },
         { name: "Ямато все предметы в выживаемость и два предмета в руки", image: "img/characters/yamato.png" }
     ],
     challenges: [
@@ -157,7 +157,6 @@ const characters = {
         { name: "«Дровосек» — Сносишь все деревянные коробки и ящики, которые видишь на пути. Пока не разобьёшь все коробки в радиусе видимости — дальше по линии не идёшь.", image: "img/challenge_icon.png" },
         { name: "«Охотник за головами» — Выбери первого попавшегося вражеского героя, который убьёт тебя на линии. Отныне ты обязан покупать предметы против него и фокусить в замесах только его лицо.", image: "img/challenge_icon.png" }
     ],
-    // ТВОЯ НОВАЯ КАТЕГОРИЯ ПРЕДМЕТОВ
     items: [
         { name: "Restorative Locket (Рестор Локет)", type: "green", tier: "Tier 2 — 1600 душ (Активный)" },
         { name: "Heroic Aura (Хероик Аура)", type: "orange", tier: "Tier 3 — 3200 душ (Активный)" },
@@ -174,31 +173,21 @@ const characters = {
     ]
 };
 
-// Функция отправки сообщений в Discord через Webhook
-
 function sendToDiscord(messageText) {
-    // Вставь сюда ссылку РЕАЛЬНО ВМЕСТО всего текста внутри кавычек
     const webhookUrl = "https://discord.com/api/webhooks/1505930908790816782/A7nYf-FjL9sww3UikARnQSFW3d49Ll5sLDJijerE9wWQLPfFH7gJXQkJIQS3gRq1ANVC";
-
-    console.log("=== ПОПЫТКА ОТПРАВКИ В ДИСКОРД ===");
-    console.log("Текст сообщения:", messageText);
-    console.log("Куда отправляем (длина ссылки):", webhookUrl.length);
-
     const payload = {
-        username: "Грандомайзер 1.3",
+        username: "Грандомайзер 1.6",
         avatar_url: "https://i.pinimg.com/1200x/0c/96/40/0c9640a0c5ad5de4cf14a2cb9d058d0e.jpg",
         content: messageText
     };
-
     fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
-    })
-
+    }).catch(err => console.error("Ошибка Discord:", err));
 }
 
-// DOM Элементы
+// Получение элементов (с защитой от отсутствия в HTML)
 const charactersGrid = document.getElementById("charactersGrid");
 const randomBtn = document.getElementById("randomBtn");
 const randomCharacterImage = document.getElementById("randomCharacterImage");
@@ -206,13 +195,13 @@ const randomCharacterName = document.getElementById("randomCharacterName");
 const categoryButtons = document.querySelectorAll(".category-btn");
 const defaultBtn = document.getElementById("defaultBtn");
 const historyList = document.getElementById("historyList");
+const playerSelect = document.getElementById("playerSelect");
 
-// Состояние приложения
 let currentCategory = "all";
 let historyArray = [];
 
-// Отрисовка сетки
 function renderCharacters(category) {
+    if (!charactersGrid) return; 
     charactersGrid.innerHTML = "";
 
     if (category === "challenges" || category === "items") {
@@ -224,24 +213,26 @@ function renderCharacters(category) {
     const uniqueChars = [];
     const seenImages = new Set();
 
-    characters[category].forEach(char => {
-        if (!seenImages.has(char.image)) {
-            seenImages.add(char.image);
-            uniqueChars.push(char);
-        }
-    });
+    if (characters[category]) {
+        characters[category].forEach(char => {
+            if (!seenImages.has(char.image)) {
+                seenImages.add(char.image);
+                uniqueChars.push(char);
+            }
+        });
+    }
 
     uniqueChars.forEach(char => {
         const card = document.createElement("div");
         card.classList.add("character-card");
-        card.title = char.name.split(' ')[0];
-        card.innerHTML = `<img src="${char.image}" alt="hero">`;
+        if (char.name) card.title = char.name.split(' ')[0];
+        card.innerHTML = `<img src="${char.image}" onerror="this.style.opacity='0.5';" alt="hero">`;
         charactersGrid.appendChild(card);
     });
 }
 
-// Обновление истории
 function updateHistory(itemData) {
+    if (!historyList) return;
     historyArray.unshift(itemData);
     if (historyArray.length > 5) historyArray.pop();
 
@@ -268,25 +259,24 @@ function updateHistory(itemData) {
     });
 }
 
-// Ролл рулетки
 function randomCharacter() {
     const pool = characters[currentCategory];
     if (!pool || pool.length === 0) return;
 
-    randomBtn.disabled = true;
-    randomCharacterImage.classList.remove("bounce-animation");
+    if (randomBtn) randomBtn.disabled = true;
+    if (randomCharacterName) randomCharacterName.classList.remove("bounce-animation");
 
     const isTextOnly = currentCategory === "challenges" || currentCategory === "items";
 
     if (isTextOnly) {
-        randomCharacterImage.style.display = "none";
-        randomCharacterName.classList.add("challenge-text-display");
-        if (currentCategory === "items") {
+        if (randomCharacterImage) randomCharacterImage.style.display = "none";
+        if (randomCharacterName) randomCharacterName.classList.add("challenge-text-display");
+        if (currentCategory === "items" && randomCharacterName) {
             randomCharacterName.classList.add("item-text-display");
         }
     } else {
-        randomCharacterImage.style.display = "block";
-        randomCharacterName.classList.remove("challenge-text-display", "item-text-display");
+        if (randomCharacterImage) randomCharacterImage.style.display = "block";
+        if (randomCharacterName) randomCharacterName.classList.remove("challenge-text-display", "item-text-display");
     }
 
     let counter = 0;
@@ -298,17 +288,21 @@ function randomCharacter() {
         const randomIndex = Math.floor(Math.random() * pool.length);
         picked = pool[randomIndex];
 
-        randomCharacterName.classList.remove("item-orange", "item-green", "item-purple");
+        if (randomCharacterName) {
+            randomCharacterName.classList.remove("item-orange", "item-green", "item-purple");
+        }
 
         if (!isTextOnly) {
-            randomCharacterImage.src = picked.image;
-            randomCharacterName.textContent = picked.name;
+            if (randomCharacterImage) randomCharacterImage.src = picked.image;
+            if (randomCharacterName) randomCharacterName.textContent = picked.name;
         } else if (currentCategory === "items") {
             const colorClass = picked.type === "orange" ? "item-orange" : picked.type === "green" ? "item-green" : "item-purple";
-            randomCharacterName.classList.add(colorClass);
-            randomCharacterName.innerHTML = `${picked.name} <div class="item-tier">${picked.tier}</div>`;
+            if (randomCharacterName) {
+                randomCharacterName.classList.add(colorClass);
+                randomCharacterName.innerHTML = `${picked.name} <div class="item-tier">${picked.tier}</div>`;
+            }
         } else {
-            randomCharacterName.textContent = picked.name;
+            if (randomCharacterName) randomCharacterName.textContent = picked.name;
         }
 
         counter++;
@@ -318,37 +312,33 @@ function randomCharacter() {
             if (counter > totalTicks - 5) duration += 60;
             setTimeout(spin, duration);
         } else {
-            randomBtn.disabled = false;
-            randomCharacterName.classList.add("bounce-animation");
+            if (randomBtn) randomBtn.disabled = false;
+            if (randomCharacterName) randomCharacterName.classList.add("bounce-animation");
+            
             updateHistory(picked);
 
-            // КРАСИВЫЙ ФОРМАТИРОВАННЫЙ ТЕКСТ ДЛЯ ДИСКОРДА
-            // 1. Получаем имя того, кто выбран в выпадающем списке прямо сейчас
-            const activePlayer = document.getElementById("playerSelect").value;
-
-            // 2. Генерируем текст под каждую категорию с упоминанием игрока
+            const activePlayer = playerSelect ? playerSelect.value : "Игрок";
             let discordMessage = "";
 
             if (currentCategory === "all") {
                 discordMessage = `🎲 **${activePlayer}** зарандомил общего героя: \`${picked.name}\``;
             } else if (currentCategory === "grant") {
-                discordMessage = `🦕 **${activePlayer}** крутит пул Гранта: \`${picked.name}\` *(Лайнинг обещает быть жарким)*`;
+                discordMessage = `🦕 **${activePlayer}** крутит пул Гранта: \`${picked.name}\``;
             } else if (currentCategory === "timur") {
-                discordMessage = `🧱 **${activePlayer}** заглянул к Тимуру: \`${picked.name}\` *(Завод работает без выходных)*`;
+                discordMessage = `🧱 **${activePlayer}** заглянул к Тимуру: \`${picked.name}\``;
             } else if (currentCategory === "meta") {
                 discordMessage = `🔥 **${activePlayer}** выбивает жёсткую МЕТУ: \`${picked.name}\``;
             } else if (currentCategory === "trash") {
-                discordMessage = `🗑️ **${activePlayer}** отправляется на помойку: \`${picked.name}\` *(Пати, приготовьтесь терпеть)*`;
+                discordMessage = `🗑️ **${activePlayer}** отправляется на помойку: \`${picked.name}\``;
             } else if (currentCategory === "builds") {
                 discordMessage = `🛠️ **${activePlayer}** получает безумный билд:\n> __${picked.name}__`;
             } else if (currentCategory === "challenges") {
                 discordMessage = `🎯 **Вызов принят!** Игрок **${activePlayer}** получает контракт:\n> ${picked.name}`;
             } else if (currentCategory === "items") {
-                const colorEmoji = picked.type === "orange" ? "orange_circle [Оружие]" : picked.type === "green" ? "green_circle [Живучесть]" : "purple_circle [Спиритизм]";
-                discordMessage = `🛒 **Проклятый закуп для ${activePlayer}!** Обязательный предмет:\n> **${picked.name}**\n> *Категория: ${colorEmoji} | ${picked.tier}*`;
+                const colorEmoji = picked.type === "orange" ? "orange_circle" : picked.type === "green" ? "green_circle" : "purple_circle";
+                discordMessage = `🛒 **Проклятый закуп для ${activePlayer}!** Обязательный предмет:\n> **${picked.name}**\n> * Категория: ${colorEmoji} | ${picked.tier}*`;
             }
 
-            // 3. Отправляем готовый текст в Discord
             sendToDiscord(discordMessage);
         }
     }
@@ -356,45 +346,71 @@ function randomCharacter() {
     spin();
 }
 
-// Смена категорий
-categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
+// Навешивание кликов на категории
+if (categoryButtons) {
+    categoryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            categoryButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            currentCategory = btn.dataset.category;
+            if (randomCharacterName) {
+                randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display", "bounce-animation");
+            }
+
+            if (currentCategory === "challenges" || currentCategory === "items") {
+                if (randomCharacterImage) randomCharacterImage.style.display = "none";
+                if (randomCharacterName) {
+                    randomCharacterName.classList.add("challenge-text-display");
+                    if (currentCategory === "items") randomCharacterName.classList.add("item-text-display");
+                    randomCharacterName.textContent = currentCategory === "challenges" ? "Нажми кнопку, чтобы получить задание" : "Нажми кнопку, чтобы выбить предмет";
+                }
+            } else {
+                if (randomCharacterImage) {
+                    randomCharacterImage.style.display = "block";
+                    randomCharacterImage.src = "img/grant.jpg"; // Дефолтная картинка при переключении
+                }
+                if (randomCharacterName) randomCharacterName.textContent = "Пока никто";
+            }
+
+            renderCharacters(currentCategory);
+        });
+    });
+}
+
+if (defaultBtn) {
+    defaultBtn.addEventListener("click", () => {
+        currentCategory = "all";
         categoryButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        const allBtn = document.querySelector('[data-category="all"]');
+        if (allBtn) allBtn.classList.add("active");
 
-        currentCategory = btn.dataset.category;
-        randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display");
-
-        if (currentCategory === "challenges" || currentCategory === "items") {
-            randomCharacterImage.style.display = "none";
-            randomCharacterName.classList.add("challenge-text-display");
-            if (currentCategory === "items") randomCharacterName.classList.add("item-text-display");
-            randomCharacterName.textContent = currentCategory === "challenges" ? "Нажми кнопку, чтобы получить задание" : "Нажми кнопку, чтобы выбить предмет";
-        } else {
-            randomCharacterImage.style.display = "block";
-            randomCharacterImage.src = "img/characters/paradox.png";
+        if (randomCharacterName) {
+            randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display", "bounce-animation");
             randomCharacterName.textContent = "Paradox";
         }
+        if (randomCharacterImage) {
+            randomCharacterImage.style.display = "block";
+            randomCharacterImage.src = "img/characters/paradox.png";
+        }
 
-        renderCharacters(currentCategory);
+        renderCharacters("all");
     });
-});
+}
 
-// Сброс (Дефолт)
-defaultBtn.addEventListener("click", () => {
-    currentCategory = "all";
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    document.querySelector('[data-category="all"]').classList.add("active");
+if (randomBtn) {
+    randomBtn.addEventListener("click", randomCharacter);
+}
 
-    randomCharacterName.classList.remove("item-orange", "item-green", "item-purple", "item-text-display", "challenge-text-display");
-    randomCharacterImage.style.display = "block";
-    randomCharacterImage.src = "img/characters/paradox.png";
-    randomCharacterName.textContent = "Paradox";
-
+// Запуск инициализации
+window.addEventListener("load", () => {
+    if (playerSelect) {
+        const savedPlayer = localStorage.getItem("selected_player");
+        if (savedPlayer) playerSelect.value = savedPlayer;
+        
+        playerSelect.addEventListener("change", (event) => {
+            localStorage.setItem("selected_player", event.target.value);
+        });
+    }
     renderCharacters("all");
 });
-
-randomBtn.addEventListener("click", randomCharacter);
-
-// Старт
-renderCharacters("all");
