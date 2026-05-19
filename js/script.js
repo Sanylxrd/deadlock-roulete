@@ -56,6 +56,16 @@ const characters = {
         { name: "Kelvin", image: "img/characters/kelvin.png" },
         { name: "McGinnis", image: "img/characters/mcginnis.png" }
     ],
+    hector: [
+        { name: "Abrams", image: "img/characters/abrams.png", weight: 1 },
+        { name: "Apollo", image: "img/characters/apollo.png", weight: 1 },
+        { name: "Козел", image: "img/characters/bebop.png", weight: 1 },
+        { name: "Holliday", image: "img/characters/holliday.png", weight: 1 },
+        { name: "Infernus", image: "img/characters/infernus.png", weight: 1 },
+        { name: "Pocket", image: "img/characters/pocket.png", weight: 1 },
+        { name: "The Doorman", image: "img/characters/doorman.png", weight: 10 }, // Шанс в 10 раз выше, чем у остальных
+        { name: "Venator", image: "img/characters/venator.png", weight: 1 }
+    ],
     meta: [
         { name: "McGinnis", image: "img/characters/mcginnis.png" },
         { name: "Seven", image: "img/characters/seven.png" },
@@ -136,8 +146,7 @@ const characters = {
         { name: "«Жадный закуп» — Тратить души можно только тогда, когда накопишь ровно 3000+ душ.", image: "img/challenge_icon.png" },
         { name: "«Стримснайпер» — Выбираешь одного врага и фокусишь всю игру ТОЛЬКО его.", image: "img/challenge_icon.png" },
         { name: "«Запрещенные технологии» — Запрещено улучшать способности (Alt+Клик) до 10-й минуты.", image: "img/challenge_icon.png" },
-        { name: "«Курьер Яндекс.Еды» — Твоя цель — Урна. Появилась? Бросаешь всё и тащишь её на базу.", image: "img/challenge_icon.png" },
-        { name: "«Пожилой дед» — Запрещено использовать спринт и подкаты. Ходи только обычным шагом до 10 минуты.", image: "img/challenge_icon.png" },
+        { name: "«Курьер Яндекс.Еды» — Твоя цель — Урна. Появилась? Бросаешь всё и тащишь её на сдачу.", image: "img/challenge_icon.png" },
         { name: "«Мастер деная» — Обязан убивать всех крипов только с руки.", image: "img/challenge_icon.png" },
         { name: "«Охранник Мид-Босса» — Каждые 5 минуты обязан бегать проверять Мид-Босса и приседать там 3 раза.", image: "img/challenge_icon.png" },
         { name: "«Стеклянная пушка» — За всю катку разрешено купить только ОДИН зеленый предмет на выживаемость.", image: "img/challenge_icon.png" },
@@ -147,15 +156,16 @@ const characters = {
         { name: "«Служба спасения Сани С» — Как только Саню С бьют, бросаешь всё и летишь к нему на зиплайне.", image: "img/challenge_icon.png" },
         { name: "«Психолог для Гранта» — Каждый раз, когда Грант умирает продаешь одну свою шмотку, и не можешь покупать её до конца игры.", image: "img/challenge_icon.png" },
         { name: "«Спонсор Тимура» — Покупаешь active шмотки на хилл или щиты и жмешь их строго на Тимура, когда он влетает.", image: "img/challenge_icon.png" },
-        { name: "«Вуайерист» — Запрещено фармить с Саней К, но ты обязан сидеть в кустах или на крыше рядом. Как на него нападут — эпично вылетай из засады!", image: "img/challenge_icon.png" },
         { name: "«Фирменный подгон для Сани С» — Обязан купить предмет на сейв/хилл (типа Heroic Aura) и юзать его только ради Сани С.", image: "img/challenge_icon.png" },
         { name: "«Импортозамещение» — За катку разрешено покупать предметы только фиолетовой категории (Спиритизм). Оружие и живучесть — под строгим запретом.", image: "img/challenge_icon.png" },
         { name: "«Скупщик краденого» — Запрещено покупать предметы в магазинах на линиях. Все шмотки закупаешь строго в Секретной лавке в подземке (в центре карты). ", image: "img/challenge_icon.png" },
-        { name: "«Агент 007» — Твоя цель — закончить катку с нулём смертей. Если умираешь хотя бы раз, до конца игры не имеешь права использовать скилы", image: "img/challenge_icon.png" },
         { name: "«Паркур — это жизнь» — Тебе запрещено использовать зипки", image: "img/challenge_icon.png" },
-        { name: "«Закон бумеранга» — Если враг убивает твоего тиммейта у тебя на глазах, ты обязан бросить все свои дела (даже если у тебя лоу-хп) и бежать убивать этого обидчика.", image: "img/challenge_icon.png" },
         { name: "«Дровосек» — Сносишь все деревянные коробки и ящики, которые видишь на пути. Пока не разобьёшь все коробки в радиусе видимости — дальше по линии не идёшь.", image: "img/challenge_icon.png" },
-        { name: "«Охотник за головами» — Выбери первого попавшегося вражеского героя, который убьёт тебя на линии. Отныне ты обязан покупать предметы против него и фокусить в замесах только его лицо.", image: "img/challenge_icon.png" }
+        { name: "«Охотник за головами» — Выбери первого попавшегося вражеского героя, который убьёт тебя на линии. Отныне ты обязан покупать предметы против него и фокусить в замесах только его лицо.", image: "img/challenge_icon.png" },
+        { name: "«Отмена» — Тебе запрещено использовать 3 скилл", image: "img/challenge_icon.png" },
+        { name: "«Отмена» — Тебе запрещено использовать 2 скилл", image: "img/challenge_icon.png" },
+        { name: "«Отмена» — Тебе запрещено использовать 1 скилл", image: "img/challenge_icon.png" },
+        { name: "«Отмена» — Тебе запрещено использовать Ульту", image: "img/challenge_icon.png" }
     ],
     items: [
         { name: "Restorative Locket (Рестор Локет)", type: "green", tier: "Tier 2 — 1600 душ (Активный)" },
@@ -285,8 +295,23 @@ function randomCharacter() {
     let picked = null;
 
     function spin() {
-        const randomIndex = Math.floor(Math.random() * pool.length);
-        picked = pool[randomIndex];
+        // Умный рандом с весами для Гектора
+        if (currentCategory === "hector") {
+            const totalWeight = pool.reduce((sum, char) => sum + (char.weight || 1), 0);
+            let randomNum = Math.random() * totalWeight;
+            
+            for (let i = 0; i < pool.length; i++) {
+                randomNum -= (pool[i].weight || 1);
+                if (randomNum <= 0) {
+                    picked = pool[i];
+                    break;
+                }
+            }
+        } else {
+            // Обычный рандом для всех остальных категорий
+            const randomIndex = Math.floor(Math.random() * pool.length);
+            picked = pool[randomIndex];
+        }
 
         if (randomCharacterName) {
             randomCharacterName.classList.remove("item-orange", "item-green", "item-purple");
@@ -326,6 +351,8 @@ function randomCharacter() {
                 discordMessage = `🦕 **${activePlayer}** крутит пул Гранта: \`${picked.name}\``;
             } else if (currentCategory === "timur") {
                 discordMessage = `🧱 **${activePlayer}** заглянул к Тимуру: \`${picked.name}\``;
+            } else if (currentCategory === "hector") {
+                discordMessage = `🤠 **${activePlayer}** испытывает удачу у Гектора: \`${picked.name}\`${picked.name === "The Doorman" ? " (КТО БЫ СОМНЕВАЛСЯ! 🚪)" : ""}`;
             } else if (currentCategory === "meta") {
                 discordMessage = `🔥 **${activePlayer}** выбивает жёсткую МЕТУ: \`${picked.name}\``;
             } else if (currentCategory === "trash") {
